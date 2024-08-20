@@ -11,3 +11,15 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener("DOMContentLoaded", function() {
+    var userLink = document.querySelector('.dropdown-toggle');
+    var dropdown = document.querySelector('.dropdown-menu');
+
+    if (userLink) {
+      userLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        dropdown.classList.toggle('show');
+      });
+    }
+});
