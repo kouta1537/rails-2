@@ -1,20 +1,22 @@
-<!-- app/views/users/edit.html.erb -->
-<h1>Edit Profile</h1>
-<%= form_for(@user) do |f| %>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
+<h2>アカウント情報の編集</h2>
 
-  <%= f.label :email %><br />
-  <%= f.email_field :email %>
+<%= form_for(@user, url: user_path(@user), method: :put) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
 
-  <%= f.label :password %><br />
-  <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
 
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
 
-  <%= f.label :avatar %><br />
-  <%= f.file_field :avatar %>
-
-  <%= f.submit "Update" %>
+  <div class="actions">
+    <%= f.submit "保存する" %>
+  </div>
 <% end %>

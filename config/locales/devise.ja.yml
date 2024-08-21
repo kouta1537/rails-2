@@ -1,0 +1,19 @@
+ja:
+  devise:
+    registrations:
+      signed_up: 'アカウント登録が完了しました。'
+      updated: 'アカウント情報が更新されました。'
+      updated_not_active: 'アカウント情報が更新されましたが、アカウントは有効化されていません。'
+      # 他のメッセージもここに追加する
+    sessions:
+      signed_in: 'ログインしました。'
+      # 他のメッセージもここに追加する
+    passwords:
+      send_instructions: 'パスワード再設定の手順をメールで送信しました。'
+      # 他のメッセージもここに追加する
+    confirmations:
+      confirmed: 'メールアドレスが確認されました。'
+      # 他のメッセージもここに追加する
+    failure:
+      unauthenticated: '認証できませんでした。'
+      # 他のメッセージもここに追加する

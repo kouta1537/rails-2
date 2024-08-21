@@ -1,0 +1,34 @@
+# config/locales/ja.yml
+ja:
+  hello: "こんにちは"
+  users:
+    sign_up: "サインアップ"
+    sign_in: "サインイン"
+    sign_out: "サインアウト"
+  activerecord:
+    models:
+      user: "ユーザー"
+      room: "施設"
+      reservation: "予約"
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+        avatar: "アバター"
+      room:
+        name: "施設名"
+        description: "紹介文"
+        price: "宿泊料金"
+        address: "住所"
+      reservation:
+        check_in: "チェックイン"
+        check_out: "チェックアウト"
+    errors:
+      messages:
+        blank: "を入力してください"
+        invalid: "は無効です"
+        not_saved: "保存できませんでした。%{count}件のエラーがあります。"
+
+    
