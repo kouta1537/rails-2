@@ -1,2 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="header">
+<h1>ようこそ！</h1>
+
+<!-- 検索機能のフォーム -->
+<%= form_with(url: search_rooms_path, method: :get, local: true) do |form| %>
+  <div>
+    <%= label_tag :area, 'エリア:' %>
+    <%= select_tag :area, options_for_select([['東京', '東京'], ['大阪', '大阪'], ['京都', '京都'], ['札幌', '札幌']]), prompt: '選択してください' %>
+  </div>
+  <div>
+    <%= label_tag :keyword, 'キーワード:' %>
+    <%= text_field_tag :keyword %>
+  </div>
+  <%= submit_tag '検索', class: 'btn btn-primary' %>
+<% end %>
+
+<!-- ログインボタン -->
+<% if user_signed_in? %>
+  <p>こんにちは、<%= current_user.name %>さん</p>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-secondary' %>
+<% end %>
+</div>

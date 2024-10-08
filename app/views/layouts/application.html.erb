@@ -15,10 +15,12 @@
     <% if user_signed_in? %>
       <%= image_tag current_user.avatar.variant(resize: "50x50") if current_user.avatar.attached? %>
       <%= link_to current_user.name, edit_user_registration_path  %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :get %>
+      <%= link_to '施設一覧', rooms_path, class: 'btn-primary' %>
+      <%= link_to '新しい施設を登録する', new_room_path, class: 'btn-primary' %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :get %>
     <% else %>
-      <%= link_to 'Login', new_user_session_path %>
-      <%= link_to 'Sign Up', new_user_registration_path %>
+      <%= link_to 'ログイン', new_user_session_path %>
+      <%= link_to '新規登録', new_user_registration_path %>
     <% end %>
   </header>
     <%= yield %>

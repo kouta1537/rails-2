@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.header {
+    display: flex;
+    justify-content: space-between; /* 左右の配置を調整 */
+    align-items: center; /* 垂直方向のセンタリング */
+    padding: 10px; /* パディングを追加 */
+  }
+  

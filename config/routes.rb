@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  root 'rooms#index'
+  root 'home#index'
+ 
 
   resource :user, only: [:show, :edit, :update] do
     collection do
@@ -12,5 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :rooms
+  resources :rooms do
+    collection do
+      get 'search'
+    end
+  end
 end
