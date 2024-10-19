@@ -6,16 +6,23 @@ Rails.application.routes.draw do
   root 'home#index'
  
 
-  resource :user, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update] do
     collection do
       get 'edit_profile'
       patch 'update_profile'
     end
   end
 
-  resources :rooms do
-    collection do
+    resources :rooms do
+      collection do
       get 'search'
+      end
+
+    resources :reservations, only: [:new, :create, :index] do
+      member do
+      get 'confirm'
+      post 'complete'
+      end
     end
   end
 end

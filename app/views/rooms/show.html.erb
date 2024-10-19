@@ -3,4 +3,5 @@
 <%= image_tag @room.image if @room.image.attached? %>
 <p><%= @room.description %></p>
 <p>宿泊料金: <%= @room.price %>円/日</p>
+<%= link_to '予約を作成', new_room_reservation_path(@room), class: 'btn' %>
 <p><%= link_to '戻る', rooms_path %></p>

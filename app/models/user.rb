@@ -6,5 +6,6 @@ class User < ApplicationRecord
   validates :bio, length: { maximum: 500 }
 
   has_one_attached :avatar
-  has_many :rooms, dependent: :destroy
+  has_many :rooms, dependent: :destroy 
+  has_many :reservations
 end
