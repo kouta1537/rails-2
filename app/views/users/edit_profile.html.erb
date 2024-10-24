@@ -24,6 +24,8 @@
       <%= f.submit "保存する" %>
     </div>
   <% end %>
+
+  <%= link_to '施設一覧に戻る', rooms_path, class: 'btn btn-secondary' %>
 <% else %>
   <p>ユーザー情報が見つかりませんでした。</p>
 <% end %>

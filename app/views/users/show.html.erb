@@ -4,3 +4,5 @@
 <p>Password: *********</p>
 <%= image_tag @user.avatar.variant(resize: "100x100") if @user.avatar.attached? %>
 <%= link_to 'Edit Profile', edit_user_path %>
+
+<%= link_to '施設一覧に戻る', rooms_path, class: 'btn btn-secondary' %>

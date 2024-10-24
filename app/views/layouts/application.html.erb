@@ -12,18 +12,23 @@
 
   <body>
     <header>
-    <% if user_signed_in? %>
-      <%= image_tag current_user.avatar.variant(resize: "50x50") if current_user.avatar.attached? %>
-      <%= link_to current_user.name, edit_user_registration_path  %>
-      <%= link_to '施設一覧', rooms_path, class: 'btn-primary' %>
-      <%= link_to '新しい施設を登録する', new_room_path, class: 'btn-primary' %>
-      <%= link_to 'プロフィール編集', edit_profile_users_path %>
-      <%= link_to '予約一覧', room_reservations_path(current_user.rooms.first), class: 'btn-primary' %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'ログイン', new_user_session_path %>
-      <%= link_to '新規登録', new_user_registration_path %>
+
+      <% if user_signed_in? %>
+        <%= image_tag current_user.avatar.variant(resize: "50x50") if current_user.avatar.attached? %>
+        <%= link_to current_user.name, edit_user_registration_path  %>
+        <%= link_to '施設一覧', rooms_path, class: 'btn-primary' %>
+        <%= link_to '新しい施設を登録する', new_room_path, class: 'btn-primary' %>
+        <%= link_to 'プロフィール編集', edit_profile_users_path %>
+     
+     <% if @rooms.present? %>
+      <%= link_to '予約済一覧', room_reservations_path(room_id: @rooms.first.id), class: 'btn-primary' %>
+     <% else %>
+      <p>現在、予約できる施設がありません。</p>
     <% end %>
+      
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% end %>
+  
   </header>
     <%= yield %>
   </body>
