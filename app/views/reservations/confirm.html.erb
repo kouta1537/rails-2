@@ -1,0 +1,17 @@
+<h1>予約確認</h1>
+
+<% if @reservation %>
+    <p>チェックイン日: <%= @reservation.check_in_date %></p>
+    <p>チェックアウト日: <%= @reservation.check_out_date %></p>
+    <p>宿泊日数: <%= (@reservation.check_out_date - @reservation.check_in_date).to_i %>日</p>
+    <p>人数: <%= @reservation.guest_count %>人</p>
+    <p>合計金額: <%= @total_price %>円</p>
+
+    <%= link_to '予約を確定する', confirm_room_reservation_path(@reservation.room, @reservation), method: :post, class: 'btn btn-primary' %>
+    <%= link_to '戻る', new_room_reservation_path(@reservation.room), class: 'btn btn-secondary' %>
+
+
+
+<% else %>
+    <p>予約が見つかりませんでした。</p>
+<% end %>

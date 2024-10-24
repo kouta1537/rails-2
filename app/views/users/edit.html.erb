@@ -1,0 +1,22 @@
+<h2>アカウント情報の編集</h2>
+
+<%= form_for(@user, url: user_path(@user), method: :put) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する" %>
+  </div>
+<% end %>

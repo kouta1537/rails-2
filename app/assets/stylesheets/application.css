@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+.header {
+  position: relative;
+  padding: 20px;
+}
+
+.header .auth-links {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+}
+
+.header .auth-links a {
+  margin-left: 10px;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 50px;
+}
+
+.header form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.header form div {
+  margin-bottom: 10px;
+}
+
+  

@@ -1,0 +1,30 @@
+<h1>予約済み一覧</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>施設名</th>
+      <th>チェックイン日</th>
+      <th>チェックアウト日</th>
+      <th>宿泊日数</th>
+      <th>人数</th>
+      <th>合計金額</th>
+      <th>状態</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.room.name %></td>
+        <td><%= reservation.check_in_date %></td>
+        <td><%= reservation.check_out_date %></td>
+        <td><%= (reservation.check_out_date - reservation.check_in_date).to_i %>日</td>
+        <td><%= reservation.guest_count %>人</td>
+        <td><%= (reservation.check_out_date - reservation.check_in_date).to_i * reservation.room.price * reservation.guest_count %>円</td>
+        <td><%= reservation.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '新しい予約をする', rooms_path, class: 'btn btn-primary' %>
